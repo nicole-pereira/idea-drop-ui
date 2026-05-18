@@ -45,7 +45,7 @@ function IdeasPage() {
             <Link
               to="/ideas/$ideaId"
               params={{ ideaId: idea.id.toString() }}
-              className="text-center mt-4 inline-block bg-orange-600 text-white px-4 py-2 rounded hover:bg-prange-700 transition">
+              className="text-center mt-4 inline-block bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-600 transition">
               View Idea
             </Link>
           </li>
