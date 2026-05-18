@@ -1,5 +1,6 @@
 import {
   HeadContent,
+  Link,
   Outlet,
   createRootRouteWithContext,
 } from "@tanstack/react-router";
@@ -26,6 +27,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
     ],
   }),
   component: RootLayout,
+  notFoundComponent: NotFound,
 });
 
 function RootLayout() {
@@ -49,6 +51,22 @@ function RootLayout() {
           },
         ]}
       />
+    </div>
+  );
+}
+
+function NotFound() {
+  return (
+    <div className="flex flex-col items-center justify-center text-center py-20">
+      <h1 className="text-4xl font-bold text-gray-800 mb-4">404</h1>
+      <p className="text-lg text-gray-60 mb-6">
+        Oooops! the page you are looking for does not exist.
+      </p>
+      <Link
+        className="px-6 py-2 bg-orange-400 text-white rounded-md hover:bg-orange-700 transition"
+        to="/">
+        Go Back Home
+      </Link>
     </div>
   );
 }
