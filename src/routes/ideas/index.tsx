@@ -1,18 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import type { Idea } from "@/types";
-import api from "@/lib/axios";
+import { fetchIdeas } from "@/api/ideas";
 
-const fetchIdeas = async (): Promise<Idea[]> => {
-  const res = await api.get("/ideas");
-  return res.data;
-};
-
-const ideasQueryOptions = () =>
-  queryOptions({
-    queryKey: ["ideas"],
-    queryFn: () => fetchIdeas(),
-  });
+const ideasQueryOptions = queryOptions({
+  queryKey: ["ideas"],
+  queryFn: fetchIdeas,
+});
 
 export const Route = createFileRoute("/ideas/")({
   head: () => ({
@@ -24,12 +17,12 @@ export const Route = createFileRoute("/ideas/")({
   }),
   component: IdeasPage,
   loader: async ({ context: { queryClient } }) => {
-    return queryClient.ensureQueryData(ideasQueryOptions());
+    return queryClient.ensureQueryData(ideasQueryOptions);
   },
 });
 
 function IdeasPage() {
-  const { data: ideas } = useSuspenseQuery(ideasQueryOptions());
+  const { data: ideas } = useSuspenseQuery(ideasQueryOptions);
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Ideas</h1>
