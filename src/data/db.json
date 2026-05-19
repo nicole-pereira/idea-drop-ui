@@ -71,24 +71,6 @@
         "ai"
       ],
       "createdAt": "2025-04-24T13:10:00.000Z"
-    },
-    {
-      "title": "nova ideia",
-      "summary": "ideia sumario",
-      "description": "ideia descrição",
-      "tags": [
-        "frontend"
-      ],
-      "createdAt": "2026-05-19T12:05:02.806Z",
-      "id": "Ffjl_Z5Szmo"
-    },
-    {
-      "title": "a",
-      "summary": "a",
-      "description": "a",
-      "tags": [],
-      "createdAt": "2026-05-19T12:05:30.954Z",
-      "id": "Ey-EQEK_pAw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
