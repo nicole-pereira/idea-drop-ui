@@ -24,6 +24,13 @@ const Header = () => {
             + New Idea
           </Link>
         </nav>
+        {/* Auth buttons */}
+        <div className="flex items-center space-x-2">
+          <Link to='/login' className="text-orange-600 hover:text-orange-700
+          font-medium transition px-4 py-2 rounded-md leading-none">Login</Link>
+           <Link to='/register' className="bg-orange-100 hover:bg-orange-200 text-orange-600
+          font-medium transition px-4 py-2 rounded-md leading-none">Register</Link>
+        </div>
       </div>
     </header>
   );
