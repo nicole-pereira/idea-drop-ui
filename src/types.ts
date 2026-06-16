@@ -14,3 +14,16 @@ export type NewIdea = {
   description: string;
   tags: string[];
 };
+
+export type User = {
+  id: string;
+  email: string;
+  name: string; 
+}
+
+export type AuthContextType = {
+  accessToken: string | null;
+  setAccessToken: (token: string) => void;
+  user: User | null;
+  setUser: (user: AuthContextType['user']) => void;
+}
