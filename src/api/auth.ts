@@ -7,7 +7,18 @@ export const registerUser = async ({ name, email, password }: User ) => {
 
     return res.data;
   } catch (err: any) {
-    const message = err.responde?.data?.message || 'Failed to register';
+    const message = err.response?.data?.message || 'Failed to register';
+    throw new Error(message);
+  }
+};
+
+export const loginUser = async (credentials: User ) => {
+  try {
+    const res = await api.post('/auth/login', credentials);
+
+    return res.data;
+  } catch (err: any) {
+    const message = err.response?.data?.message || 'Failed to login';
     throw new Error(message);
   }
 };
