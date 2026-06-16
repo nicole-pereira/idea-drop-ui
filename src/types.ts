@@ -24,7 +24,7 @@ export type User = {
 
 export type AuthContextType = {
   accessToken: string | null;
-  setAccessToken: (token: string) => void;
+  setAccessToken: (token: string | null) => void;
   user: User | null;
   setUser: (user: AuthContextType["user"]) => void;
 };

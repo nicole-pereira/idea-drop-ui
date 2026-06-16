@@ -22,3 +22,12 @@ export const loginUser = async (credentials: User ) => {
     throw new Error(message);
   }
 };
+
+export const logoutUser = async () => {
+  try {
+    await api.post('/auth/logout');
+  } catch (err: any) {
+    const message = err.response?.data?.message || 'Failed to logout';
+    throw new Error(message);
+  }
+};
