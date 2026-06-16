@@ -57,7 +57,7 @@ const Header = () => {
             ) : 
             (
               <>
-                <span className="text-orange-600 font-medium px-2">
+                <span className="hidden sm:block text-orange-600 font-medium px-2">
                   Welcome, {user.name}!
                 </span>
                 <button onClick={handleLogout} className="cursor-pointer text-red-500 hover:text-red-900 font-medium
